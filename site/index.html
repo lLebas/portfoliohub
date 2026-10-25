@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://avatars.githubusercontent.com; connect-src https://api.github.com; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>PortfolioHUB</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231B2A41'/><circle cx='16' cy='16' r='6' fill='%23F2C14E'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Sans+3:wght@400;600&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#projetos">Pular para os projetos</a>
+
+  <header class="perfil" aria-live="polite">
+    <img id="avatar" class="avatar" alt="" width="72" height="72" hidden>
+    <div>
+      <h1 id="nome">PortfolioHUB</h1>
+      <p id="bio" class="bio">Carregando perfil do GitHub…</p>
+      <p class="links"><a id="link-perfil" href="#" rel="noopener noreferrer" target="_blank" hidden>Ver perfil no GitHub</a></p>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="t-linguagens" class="linguagens">
+      <h2 id="t-linguagens">Linguagens nos projetos</h2>
+      <div id="barra" class="barra" role="group" aria-label="Filtrar por linguagem"></div>
+      <p class="dica">Clique numa linguagem para filtrar a lista.</p>
+    </section>
+
+    <section aria-labelledby="t-destaques" id="sec-destaques" hidden>
+      <h2 id="t-destaques">Em destaque</h2>
+      <ul id="destaques" class="destaques"></ul>
+    </section>
+
+    <section aria-labelledby="t-projetos" id="projetos">
+      <div class="cabeca-lista">
+        <h2 id="t-projetos">Todos os projetos</h2>
+        <div class="filtros">
+          <label>Buscar <input id="busca" type="search" placeholder="Nome ou descrição" autocomplete="off"></label>
+          <label>Linguagem <select id="lang"><option value="">Todas</option></select></label>
+          <label>Ordenar <select id="ordem">
+            <option value="updated">Atualizados recentemente</option>
+            <option value="stars">Mais estrelas</option>
+            <option value="name">Nome (A–Z)</option>
+          </select></label>
+        </div>
+      </div>
+      <p id="status" class="status" role="status">Buscando repositórios…</p>
+      <ol id="lista" class="lista"></ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>Projetos lidos em tempo real da API pública do GitHub. Para destacar um repositório, adicione o tópico <code>portfolio</code> nele.</p>
+  </footer>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.env
+*.env
+node_modules/
+entrega/Entrega_Final_PortfolioHUB.pdf
+
+# Entrega (prints e PDF ficam fora do repo)
+entrega/prints/*
+!entrega/prints/.gitkeep

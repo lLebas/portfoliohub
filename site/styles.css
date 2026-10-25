@@ -1,0 +1,50 @@
+:root{
+  --tinta:#1B2A41; --papel:#EEF1F5; --superficie:#FFFFFF; --texto:#1B2A41; --suave:#56657A;
+  --sinal:#F2C14E; --mar:#1F6F6F; --linha:#D3DAE2;
+  --disp:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --corpo:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --papel:#111A27; --superficie:#18243A; --texto:#E6EBF1; --suave:#9AA8B6; --linha:#2B3A52; --mar:#5FC2C2; color-scheme: dark; }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papel);color:var(--texto);font:400 1.0625rem/1.55 var(--corpo)}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:var(--sinal);color:#1B2A41;padding:.5rem .75rem;z-index:5}
+a{color:var(--mar);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--sinal);outline-offset:2px}
+header.perfil,main,footer{max-width:68rem;margin:0 auto;padding-left:1.25rem;padding-right:1.25rem}
+header.perfil{display:flex;gap:1.25rem;align-items:center;padding-top:3.5rem;padding-bottom:2rem}
+.avatar{border-radius:50%;border:3px solid var(--sinal)}
+h1{font:700 clamp(2.2rem,6vw,4rem)/1 var(--disp);letter-spacing:-.02em;margin:0 0 .4rem}
+h2{font:700 1.5rem/1.2 var(--disp);margin:0 0 1rem}
+h3{font:500 1.2rem/1.25 var(--disp);margin:0 0 .25rem}
+.bio{margin:0;color:var(--suave);max-width:60ch}.links{margin:.4rem 0 0}
+main section{margin:2.5rem 0}
+.barra{display:flex;height:3rem;border-radius:10px;overflow:hidden;gap:2px;background:var(--linha)}
+.fatia{flex-basis:0;min-width:2.5rem;border:0;background:var(--cor);cursor:pointer;padding:0 .5rem;text-align:left;font:600 .85rem var(--corpo);color:#fff;transition:filter .15s}
+.fatia .rotulo{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;text-shadow:0 1px 2px rgba(0,0,0,.5)}
+.fatia[aria-pressed="true"]{box-shadow:inset 0 -6px 0 var(--sinal)}
+.barra:has(.fatia[aria-pressed="true"]) .fatia[aria-pressed="false"]{filter:grayscale(.8) brightness(.9)}
+.dica{color:var(--suave);font-size:.9rem;margin:.5rem 0 0}
+.destaques{list-style:none;padding:0;margin:0;display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr))}
+.destaque{background:var(--tinta);color:#E6EBF1;padding:1.5rem;border-radius:14px;border-left:6px solid var(--sinal)}
+.destaque .meta,.destaque .desc{color:#B9C4D0}.destaque a{color:var(--sinal)}
+.cabeca-lista{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1rem;border-bottom:2px solid var(--texto);padding-bottom:.75rem}
+.cabeca-lista h2{margin:0}
+.filtros{display:flex;flex-wrap:wrap;gap:.75rem}
+.filtros label{display:grid;gap:.2rem;font-size:.85rem;color:var(--suave)}
+input,select{font:inherit;font-size:1rem;padding:.45rem .6rem;border:1px solid var(--linha);border-radius:8px;background:var(--superficie);color:var(--texto);min-width:11rem}
+.status{color:var(--suave);font-size:.95rem}
+.lista{list-style:none;padding:0;margin:0}
+.repo{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.25rem 2rem;padding:1.1rem 0;border-bottom:1px solid var(--linha)}
+.repo h3,.repo .desc,.repo .meta{grid-column:1}.repo .acoes{grid-column:2;grid-row:1 / span 3;align-self:center}
+.desc{margin:0;max-width:65ch}
+.meta{display:flex;flex-wrap:wrap;gap:1rem;margin:.35rem 0 0;color:var(--suave);font-size:.9rem}
+.lang{display:inline-flex;align-items:center;gap:.4rem}.ponto{width:.7rem;height:.7rem;border-radius:50%;display:inline-block}
+.acoes{display:flex;gap:1rem;margin:.5rem 0 0}.acoes a{font-weight:600}
+.demo{background:var(--sinal);color:#1B2A41!important;padding:.3rem .7rem;border-radius:6px;text-decoration:none}
+footer{padding-top:1rem;padding-bottom:3rem;color:var(--suave);font-size:.9rem;border-top:1px solid var(--linha)}
+code{background:var(--superficie);padding:.1rem .35rem;border-radius:4px}
+@media (max-width:640px){.repo{grid-template-columns:1fr}.repo .acoes{grid-column:1;grid-row:auto}header.perfil{flex-direction:column;align-items:flex-start}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
