@@ -1,0 +1,5 @@
+# Normaliza fim de linha (LF) em todos os arquivos de texto
+* text=auto eol=lf
+
+# Material da entrega não conta nas estatísticas de linguagem do repo
+entrega/** linguist-documentation
