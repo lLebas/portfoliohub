@@ -23,7 +23,7 @@ h3{font:500 1.2rem/1.25 var(--disp);margin:0 0 .25rem}
 main section{margin:2.5rem 0}
 .barra{display:flex;height:3rem;border-radius:10px;overflow:hidden;gap:2px;background:var(--linha)}
 .fatia{flex-basis:0;min-width:2.5rem;border:0;background:var(--cor);cursor:pointer;padding:0 .5rem;text-align:left;font:600 .85rem var(--corpo);color:#fff;transition:filter .15s}
-.fatia .rotulo{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block;text-shadow:0 1px 2px rgba(0,0,0,.5)}
+.fatia .rotulo{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:inline-block;max-width:100%;box-sizing:border-box;padding:.1rem .35rem;border-radius:4px;background:rgba(0,0,0,.45)}
 .fatia[aria-pressed="true"]{box-shadow:inset 0 -6px 0 var(--sinal)}
 .barra:has(.fatia[aria-pressed="true"]) .fatia[aria-pressed="false"]{filter:grayscale(.8) brightness(.9)}
 .dica{color:var(--suave);font-size:.9rem;margin:.5rem 0 0}
