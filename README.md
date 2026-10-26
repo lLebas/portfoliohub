@@ -2,7 +2,7 @@
 
 Plataforma centralizada que exibe meus projetos direto do GitHub: perfil, linguagens, destaques e lista filtrável de repositórios. O GitHub é o armazenamento dos projetos; o site é publicado automaticamente no GitHub Pages.
 
-**Site:** https://lLebas.github.io/portfoliohub/
+**Site:** https://llebas.github.io/portfoliohub/
 
 ## Como funciona
 - `site/` — HTML, CSS e JS puros, sem dependências. Lê a API pública do GitHub (`/users/:user` e `/users/:user/repos`).
@@ -21,7 +21,7 @@ CONTRIBUTING.md    fluxo de colaboração
 
 ## Rodar localmente
 ```bash
-cd site && python3 -m http.server 8080
+cd site && python3 -m http.server 8080   # no Windows: python -m http.server 8080
 ```
 
 Implantação completa: [docs/SETUP.md](docs/SETUP.md)
